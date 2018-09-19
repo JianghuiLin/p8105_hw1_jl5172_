@@ -14,8 +14,9 @@ When you click the **Knit** button a document will be generated that includes bo
 
 ```{r}
 #A random sample of size 10 from a uniform[0, 5] distribution
-runif(10,0,5)  
+random10<-runif(10,0,5)  
 # the runif function provide information about the uniform distribution on the interval from min to max. In this case sample size is 10,min=0 max=5 
+
 ```
 
 ```{r}
@@ -24,6 +25,7 @@ compare2<-c(1,2,3,4,5)
 compare2>2  # this line compare each elements in vector compare2 to 2 one by one. If an element is greater than 2 R will return TRUE otherwise it will return FALSE
 # output: FALSE FALSE TRUE TRUE TRUE
 # this code 
+
 ```
 
 ```{r}
@@ -32,8 +34,25 @@ alphabet<-c("a","b","c","d","e","f","g","h","i","j")
 
 ```
 
+
 ```{r}
+#A (length-10) factor vector
+# the vector named student contains set of numeric codes with character-valued levels
+student = factor(c(1,0,1,1,0,1,0,0,1,1),levels = c(0,1),labels = c("male","female"))
+
 
 ```
+
+Mean of vectors
+```{r}
+mean(random10)
+mean(compare2)
+mean(alphabet)
+mean(student)
+# According to the output. Mean can be taken from random10(numeric) and compare2(numeric) 
+#but not alphabet(character) and student(factor) since mean function is designed for numeric/logical vectors
+
+```
+
 
 
