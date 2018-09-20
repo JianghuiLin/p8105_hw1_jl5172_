@@ -77,8 +77,10 @@ The proportion of cases for which logical vector is TRUE is `r sum(dataframe2$lo
 
 Scatterplot Logical Variable
 ```{r}
-ggplot(dataframe2, aes(x = dataframe2$x, y = dataframe2$y,color=dataframe2$logicxy)) + geom_point()
+library(ggplot2)
+first_plot=ggplot(dataframe2, aes(x = dataframe2$x, y = dataframe2$y,color=dataframe2$logicxy)) + geom_point()
 
+ggsave("firstplot.pdf",plot =first_plot )
 ```
 
 Scatterplot Numeric variable
