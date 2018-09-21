@@ -50,13 +50,16 @@ as.numeric(dataframe1$factor10)
 ```{r}
 character10<-as.factor(dataframe1$character10)
 character10<-as.numeric(character10)
+
 # the character vector has been sucessfully converted to numeric.
+
+```
+
+```{r}
 factor10<-as.character(dataframe1$factor10)
 factor10<-as.numeric(factor10)
 # Warning message is shown. "NAs introduced by coercion"
 ```
-
-
 
 ## inline code
 ```{r}
@@ -70,17 +73,17 @@ logicxy = c((x+y)>0),
 numericxy=as.numeric(logicxy),
 factorxy=as.factor(logicxy))
 ```
-
+The size of dataset is `r dim(dataframe2)`
 The mean of x is `r mean(dataframe2$x)`
 The median of x is `r median(dataframe2$x)`
-The proportion of cases for which logical vector is TRUE is `r sum(dataframe2$logicxy)`
+The proportion of cases for which logical vector is TRUE is `r mean(dataframe2$logicxy)`
 
 Scatterplot Logical Variable
 ```{r}
 library(ggplot2)
 first_plot=ggplot(dataframe2, aes(x = dataframe2$x, y = dataframe2$y,color=dataframe2$logicxy)) + geom_point()
 
-ggsave("firstplot.pdf",plot =first_plot )
+
 ```
 
 Scatterplot Numeric variable
@@ -95,4 +98,7 @@ ggplot(dataframe2, aes(x = dataframe2$x, y = dataframe2$y,color=dataframe2$facto
 ```
 
 
+```{r}
+ggsave("firstplot.pdf",plot =first_plot )
+```
 
